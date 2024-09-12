@@ -1,0 +1,247 @@
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-video .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 60vh;
+    max-height: 480px;
+    overflow: visible;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    overflow: visible;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-item .pac-image,
+.carousel-item .sonic-image,
+.carousel-item .mario-image,
+.carousel-item .donkey-image {
+    position: absolute;
+    z-index: 2;
+}
+
+.carousel-item.pac .pac-image {
+    top: 5%;
+    left: 50%;
+    width: 60%;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+.carousel-item.sonic .sonic-image {
+    top: 10%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+.carousel-item.mario .mario-image {
+    top: 20%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+.carousel-item.donkey .donkey-image {
+    top: 30%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+    transform: translateX(-50%);
+}
+
+.carousel-item .button {
+    position: absolute;
+    bottom: 10%;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.carousel-item .button a {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FFA12B;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+}
+
+.carousel-item .button a:active {
+    background-color: #F78900;
+    box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+
+.carousel-item .title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffa600;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.prev, .next {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    .carousel {
+        height: 50vh;
+    }
+
+    .carousel-item .pac-image,
+    .carousel-item .sonic-image,
+    .carousel-item .mario-image,
+    .carousel-item .donkey-image {
+        width: 70%;
+    }
+
+    .carousel-item .button {
+        width: 60%;
+    }
+
+    .carousel-item .button a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .carousel-item .title {
+        font-size: 18px;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+/* Media Queries para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .carousel {
+        height: 40vh;
+    }
+
+    .carousel-item .pac-image,
+    .carousel-item .sonic-image,
+    .carousel-item .mario-image,
+    .carousel-item .donkey-image {
+        width: 80%;
+    }
+
+    .carousel-item .button {
+        width: 80%;
+    }
+
+    .carousel-item .button a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .carousel-item .title {
+        font-size: 16px;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 6px;
+    }
+}
